@@ -1,6 +1,8 @@
 FROM alpine:latest
 LABEL maintainer="luke.fulford@ed.ac.uk"
 
+# Derived From Image @ https://github.com/show0k/alpine-jupyter-docker
+
 # Install glibc and useful packages
 RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
     && apk --update add \
