@@ -1,8 +1,5 @@
 FROM alpine:latest
-
-ARG VCS_REF
-
-
+LABEL maintainer="luke.fulford@ed.ac.uk"
 
 # Install glibc and useful packages
 RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
@@ -67,7 +64,6 @@ RUN cd /tmp && \
 
 
 USER root
-
 
 # Configure container startup as root
 WORKDIR /home/$NB_USER/work
