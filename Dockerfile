@@ -1,7 +1,15 @@
+#  __      __   _____           
+#  \ \    / /  |  __ \          
+#   \ \  / /_ _| |__) |__  _ __ 
+#    \ \/ / _` |  ___/ _ \| '__|
+#     \  / (_| | |  | (_) | |   
+#      \/ \__,_|_|   \___/|_|   
+# 
+# This docker image is part of the VaPor project. 
+# Derived from image @ https://github.com/show0k/alpine-jupyter-docker
+
 FROM alpine:latest
 LABEL maintainer="luke.fulford@ed.ac.uk"
-
-# Derived From Image @ https://github.com/show0k/alpine-jupyter-docker
 
 # Install glibc and useful packages
 RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
@@ -55,7 +63,7 @@ RUN mkdir /home/$NB_USER/work && \
     mkdir /home/$NB_USER/.jupyter && \
     mkdir /home/$NB_USER/.local
 
-# Install conda as jovyan
+# Install conda as vapor
 RUN cd /tmp && \
     mkdir -p $CONDA_DIR && \
     curl -L $MINICONDA_URL  -o miniconda.sh && \
